@@ -9,6 +9,9 @@ backend:
         - npm install -g @aws-amplify/cli
         - pip3 install awscli --upgrade --user
         - export PATH=$PATH:$HOME/.local/bin
+        - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+        - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+        - aws configure set region $AWS_REGION
     build:
       commands:
         - amplify pull --appId $AWS_APP_ID
@@ -37,3 +40,6 @@ frontend:
 env:
   variables:
     AMPLIFY_MONOREPO_APP_ROOT: amplify-angular-template
+    AWS_ACCESS_KEY_ID: ASIAY3OIXVGYQOI6CV7V
+    AWS_SECRET_ACCESS_KEY: jn9/QyPWWf1tRxtmJOV0UfrMDDxQlNlELUujQMCF
+    AWS_REGION: eu-central-1
