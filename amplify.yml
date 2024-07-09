@@ -7,7 +7,7 @@ backend:
         - nvm use 20.11.1
         - npm install -g npm@latest
         - npm install -g @aws-amplify/cli
-        - pip3 install --user awscli
+        - pip3 install awscli --upgrade --user
         - export PATH=$PATH:$HOME/.local/bin
     build:
       commands:
@@ -31,6 +31,7 @@ frontend:
       - '**/*'
   cache:
     paths:
+      - .npm/**/*
       - node_modules/**/*
 
 env:
