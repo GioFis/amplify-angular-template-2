@@ -11,7 +11,7 @@ backend:
         - export PATH=$PATH:$HOME/.local/bin
     build:
       commands:
-        - amplify pull --appId $AWS_APP_ID --yes
+        - amplify pull
 frontend:
   phases:
     preBuild:
