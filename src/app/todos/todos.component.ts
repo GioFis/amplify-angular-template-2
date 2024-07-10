@@ -13,6 +13,12 @@ const client = generateClient<Schema>();
   styleUrl: './todos.component.css',
 })
 export class TodosComponent implements OnInit {
+
+
+  deleteTodo(id: string) {
+    client.models.Todo.delete({ id })
+  }
+
   todos: any[] = [];
 
   ngOnInit(): void {
